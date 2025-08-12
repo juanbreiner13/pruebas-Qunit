@@ -48,4 +48,34 @@ return a + b; | ¡Esto está mal!
 Este archivo es el que se va a probar.
 ```
 
+## Archivo de pruebas
+```
+**FUNCIÓN A PROBAR**
+    function multiplicar(a, b) {
+      return a * b;
+    }
+```
+## PRUEBAS CON QUNIT
+```
+    QUnit.module('Pruebas de función multiplicar', function() {
+      QUnit.test('2 * 3 debe ser 6', function(assert) {
+        assert.equal(multiplicar(2, 3), 6, '2 * 3 = 6');
+      });
+        
+      QUnit.test('0 * 10 debe ser 0', function(assert) {
+        assert.equal(multiplicar(0, 10), 0, '0 * 10 = 0');
+      });
+
+      QUnit.test('-5 * 2 debe ser -10', function(assert) {
+        assert.equal(multiplicar(-5, 2), -10, '-5 * 2 = -10');
+      });
+
+      QUnit.test('Multiplicar por string no numérico debe dar NaN', function(assert) {
+        assert.ok(isNaN(multiplicar(4, "hola")), '4 * "hola" = NaN');
+      });
+    });
+```
+
+
+
 
