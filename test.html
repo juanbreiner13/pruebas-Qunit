@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>QUnit Test: Multiplicación</title>
+
+  <!-- QUnit CSS  enlaces a QUnit-->
+  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.4.css">
+</head>
+<body>
+
+  <!-- QUnit UI -->
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+
+  <!-- QUnit JS  enlace a QUnit-->
+  <script src="https://code.jquery.com/qunit/qunit-2.19.4.js"></script>
+
+  <!-- Tu código JavaScript -->
+  <script>
+    // ==========================================
+    // FUNCIÓN A PROBAR
+    // ==========================================
+    function multiplicar(a, b) {
+      return a * b;
+    }
+
+    // ==========================================
+    // PRUEBAS CON QUNIT
+    // ==========================================
+    QUnit.module('Pruebas de función multiplicar', function() {
+      QUnit.test('2 * 3 debe ser 6', function(assert) {
+        assert.equal(multiplicar(2, 3), 6, '2 * 3 = 6');
+      });
+        
+      QUnit.test('0 * 10 debe ser 0', function(assert) {
+        assert.equal(multiplicar(0, 10), 0, '0 * 10 = 0');
+      });
+
+      QUnit.test('-5 * 2 debe ser -10', function(assert) {
+        assert.equal(multiplicar(-5, 2), -10, '-5 * 2 = -10');
+      });
+
+      QUnit.test('Multiplicar por string no numérico debe dar NaN', function(assert) {
+        assert.ok(isNaN(multiplicar(4, "hola")), '4 * "hola" = NaN');
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+///
+ function multiplicar(a, b) {
+  return a + b; // ¡Esto está mal!
+///
+
+// si sale en verde es porque está bien
+// si sale en rojo es porque está mal
